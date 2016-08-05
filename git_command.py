@@ -20,3 +20,17 @@ $ git reset --hard HEAD^
 #回退到指定版本
 $ git reset --hard 3628164
 #Git提供了一个命令git reflog用来记录你的每一次命令
+$git reflog
+#命令git checkout -- readme.txt意思就是，把readme.txt文件在工作区的修改全部撤销
+#这里有两种情况：
+#一种是readme.txt自修改后还没有被放到暂存区，现在，撤销修改就回到和版本库一模一样的状态；
+#一种是readme.txt已经添加到暂存区后，又作了修改，现在，撤销修改就回到添加到暂存区后的状态。
+$ git checkout -- readme.txt
+#用命令git reset HEAD file可以把暂存区的修改撤销掉（unstage），重新放回工作区
+$ git reset HEAD readme.txt
+#从版本库中删除该文件，那就用命令git rm删掉，并且git commit
+$ git rm test.txt
+#要关联一个远程库，使用命令
+$ git push -ugit push -u origin master
+#关联后，使用命令git push -u origin master第一次推送master分支的所有内容；
+$git push -u origin master
